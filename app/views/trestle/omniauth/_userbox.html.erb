@@ -1,0 +1,14 @@
+<div class="userbox pull-right dropdown">
+  <%= link_to "#", class: 'dropdown-toggle', data: { toggle: 'dropdown' } do %>
+    <span class="name">
+      <%= format_user_name(current_user) %>
+      <span class="caret"></span>
+    </span>
+
+    <%= avatar_for(current_user) %>
+  <% end %>
+
+  <ul class="dropdown-menu dropdown-menu-right">
+    <li><%= link_to t("admin.omniauth.logout", default: "Log out"), trestle.logout_path, class: "dropdown-item" %></li>
+  </ul>
+</div>

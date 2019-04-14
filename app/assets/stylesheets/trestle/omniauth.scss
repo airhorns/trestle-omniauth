@@ -1,0 +1,66 @@
+ // User-defined variables
+@import "trestle/support";
+@import "omniauth/defaults";
+
+// 3rd party dependencies
+@import "trestle/bootstrap";
+@import "trestle/font-awesome";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+
+  margin: 0;
+  overflow: hidden;
+
+  color: white;
+  background: $auth-bg;
+
+  display: flex;
+}
+
+.container {
+  margin: auto;
+  width: 320px;
+}
+
+a {
+  color: rgba(white, 0.75);
+  &:hover { color: white; }
+}
+
+.btn {
+  box-shadow: rgba(black, 0.1) 0 0 2px;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.btn-primary {
+  outline: none;
+
+  color: $auth-login-btn-color;
+  background: $auth-login-btn-bg;
+  border: $auth-login-btn-border;
+
+  &:hover {
+    background-color: darken($auth-login-btn-bg, 2.5%);
+    border-color: darken($auth-login-btn-border, 5%);
+  }
+
+  &:focus, &:active {
+    background-color: darken($auth-login-btn-bg, 5%);
+    border-color: darken($auth-login-btn-border, 10%);
+  }
+
+  &:active:focus {
+    outline: none !important;
+    background-color: darken($auth-login-btn-bg, 10%);
+    border-color: darken($auth-login-btn-border, 15%);
+  }
+}
+
+@import "trestle/custom-omniauth";

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+
+    <meta content='no-cache' name='turbolinks-cache-control'>
+
+    <%= csrf_meta_tags %>
+
+    <title><%= Trestle.config.site_title %></title>
+
+    <%= stylesheet_link_tag "trestle/omniauth", 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="auth-header">
+        <h1><%= trestle_omniauth_title %></h1>
+      </header>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>

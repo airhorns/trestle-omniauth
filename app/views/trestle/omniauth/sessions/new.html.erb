@@ -1,0 +1,11 @@
+<%= hook("omniauth.login.heading") %>
+
+<% if flash[:error] -%>
+  <div class="alert alert-danger">
+    <p><%= flash[:error] %></p>
+  </div>
+<% end -%>
+
+<% @providers.each do |name| %>
+  <a class="btn btn-primary" href="/auth/<%= name %>">Login with <%= name.to_s.titleize %></a>
+<% end %>
