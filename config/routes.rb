@@ -4,5 +4,6 @@ Trestle::Engine.routes.draw do
     get "login" => :new, as: :login
     get "logout" => :destroy, as: :logout
     post "/auth/:provider/callback" => :create
+    get "/auth/:provider/callback" => :create
   end
 end

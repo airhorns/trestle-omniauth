@@ -1,9 +1,9 @@
 module Trestle::Omniauth::UserHelper
   def format_user_name(user)
-    instance_exec(user, &Trestle.config.auth.format_user_name)
+    instance_exec(user, &Trestle.config.omniauth.format_user_name)
   end
 
   def avatar_for(user)
-    instance_exec(user, &Trestle.config.auth.avatar) if Trestle.config.auth.avatar
+    instance_exec(user, &Trestle.config.omniauth.avatar) if Trestle.config.omniauth.avatar
   end
 end

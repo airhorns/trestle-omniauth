@@ -5,14 +5,18 @@ module Trestle
       include Configurable
 
       option :avatar, ->(user) {
-               avatar { gravatar(user[:info][:email]) }
+               avatar { gravatar(user["info"]["email"]) }
              }, evaluate: false
 
       option :format_user_name, ->(user) {
-               if user[:info][:first_name] && user[:info][:last_name]
-                 safe_join([user.first_name, content_tag(:strong, user.last_name)], " ")
+               if user["info"]["first_name"] && user["info"]["last_name"]
+                 safe_join([user["info"]["first_name"], content_tag(:strong, user["info"]["last_name"])], " ")
+               elsif user["info"]["name"]
+                 content_tag(:strong, user["info"]["name"])
+               elsif user["info"]["email"]
+                 content_tag(:strong, user["info"]["email"])
                else
-                 display(user[:info])
+                 "UID #{user[:uid]}"
                end
              }, evaluate: false
 
