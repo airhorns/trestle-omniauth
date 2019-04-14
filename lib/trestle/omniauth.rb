@@ -1,4 +1,4 @@
-require "trestle/omniauth/engine"
+require "trestle"
 
 module Trestle
   module Omniauth
@@ -11,3 +11,5 @@ module Trestle
 
   Configuration.option :omniauth, Omniauth::Configuration.new
 end
+
+require "trestle/omniauth/engine"

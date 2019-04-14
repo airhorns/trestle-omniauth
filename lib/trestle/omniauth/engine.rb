@@ -1,3 +1,5 @@
+require "omniauth"
+
 module Trestle
   module Omniauth
     class Engine < ::Rails::Engine
