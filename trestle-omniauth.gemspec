@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", ">= 5.0.0"
-  spec.add_dependency "trestle", "~> 0.8"
+  spec.add_dependency "trestle", "~> 0.9"
   spec.add_dependency "omniauth", "~> 1.9.0"
 
   spec.add_development_dependency "sqlite3"

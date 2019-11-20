@@ -1,0 +1,30 @@
+{
+  "name": "trestle-omniauth",
+  "version": "0.2.0",
+  "description": "Auth plugin for using OmniAuth to auth against trestle",
+  "main": "index.scss",
+  "repository": "https://github.com/airhorns/trestle-omniauth.git",
+  "author": "Harry Brundage <harry@harry.me>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "dependencies": {
+    "trestle": "https://github.com/TrestleAdmin/trestle.git"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-fix-style-only-entries": "^0.2.1"
+  }
+}
