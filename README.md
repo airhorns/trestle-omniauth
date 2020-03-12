@@ -38,6 +38,24 @@ Trestle.configure do |config|
 end
 ```
 
+### Notes
+
+ - `trestle-omniauth` doesn't do anything in particular to filter which users can authenticate with your application. If the authentication provider you configured authorizes a user, then they are able to use the whole of the admin. In the case of something like Google OAuth2, there's an option to create an Internal Only credential, which will disallow anyone outside the Google organization from logging in. See https://support.google.com/cloud/answer/6158849?hl=en for more details.
+ - Authentication can be skipped for certain controllers using Trestle's `controller` block to skip the before filter like so:
+
+```ruby
+Trestle.resource(:resource) do
+  # ...
+  controller do
+    skip_before_action :require_authenticated_user, only: [:dump]
+
+    def dump
+      render json: Resource.all
+    end
+  end
+end
+```
+
 ## License
 
 The gem is available as open source under the terms of the [LGPLv3 License](https://opensource.org/licenses/LGPL-3.0). All credit goes to [trestle-auth](https://github.com/TrestleAdmin/trestle-auth) of which this gem is a close derivative.
