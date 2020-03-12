@@ -7,5 +7,5 @@
 <% end -%>
 
 <% @providers.each do |name| %>
-  <a class="btn btn-primary" href="<%= File.join(Trestle.config.path, "auth", name.to_s) %>">Login with <%= name.to_s.titleize %></a>
+  <a class="btn btn-block btn-primary" href="<%= File.join(Trestle.config.path, "auth", name.to_s) %>">Login with <%= name.to_s.titleize %></a>
 <% end %>
