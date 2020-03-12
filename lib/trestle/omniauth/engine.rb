@@ -18,6 +18,8 @@ module Trestle
       initializer "trestle.omniauth.configure" do
         Trestle::Engine.middleware.use ::OmniAuth::Builder do
           Trestle.config.omniauth.providers.each do |name, args|
+            options = args.extract_options!
+            options[:path_prefix] = Trestle.config.path
             self.provider name, *args
           end
         end

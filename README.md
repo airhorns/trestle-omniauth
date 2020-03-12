@@ -38,6 +38,13 @@ Trestle.configure do |config|
 end
 ```
 
+You can also use Trestle's route helpers if you need to add more login/logout links:
+
+```ruby
+# in a view somewhere
+<%= link_to "Logout", trestle.logout_url %>
+```
+
 ### Notes
 
  - `trestle-omniauth` doesn't do anything in particular to filter which users can authenticate with your application. If the authentication provider you configured authorizes a user, then they are able to use the whole of the admin. In the case of something like Google OAuth2, there's an option to create an Internal Only credential, which will disallow anyone outside the Google organization from logging in. See https://support.google.com/cloud/answer/6158849?hl=en for more details.
@@ -55,6 +62,7 @@ Trestle.resource(:resource) do
   end
 end
 ```
+ - Omniauth listens using the same path prefix that Trestle is set up with. So, if `Trestle.config.path = "/admin"`, the auth URLs will be `/admin/auth/:provider` etc. This is implemented using Omniauth's `:path_prefix` provider option which is passed automatically.
 
 ## License
 
