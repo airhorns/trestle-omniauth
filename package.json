@@ -5,7 +5,7 @@
   "main": "index.scss",
   "repository": "https://github.com/airhorns/trestle-omniauth.git",
   "author": "Harry Brundage <harry@harry.me>",
-  "license": "MIT",
+  "license": "LGPLv3",
   "private": true,
   "scripts": {
     "dev": "webpack --mode development",

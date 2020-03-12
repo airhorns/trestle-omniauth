@@ -12,9 +12,9 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/airhorns/trestle-omniauth"
   spec.description = "Use omniauth auth providers to authenticate with Trestle"
   spec.summary = "Use omniauth auth providers to authenticate with Trestle"
-  spec.license = "MIT"
+  spec.license = "LGPLv3"
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", ">= 5.0.0"
   spec.add_dependency "trestle", "~> 0.9"

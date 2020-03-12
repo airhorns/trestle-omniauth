@@ -39,4 +39,5 @@ end
 ```
 
 ## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+The gem is available as open source under the terms of the [LGPLv3 License](https://opensource.org/licenses/LGPL-3.0). All credit goes to [trestle-auth](https://github.com/TrestleAdmin/trestle-auth) of which this gem is a close derivative.
