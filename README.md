@@ -33,7 +33,6 @@ In your `config/initializers/trestle.rb`, add providers like so:
 Trestle.configure do |config|
 # ...
 # ...
-  config.omniauth.provider :developer unless Rails.env.production?
   config.omniauth.provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
 end
 ```
@@ -63,6 +62,7 @@ Trestle.resource(:resource) do
 end
 ```
  - Omniauth listens using the same path prefix that Trestle is set up with. So, if `Trestle.config.path = "/admin"`, the auth URLs will be `/admin/auth/:provider` etc. This is implemented using Omniauth's `:path_prefix` provider option which is passed automatically.
+ - The `developer` Omniauth strategy does a direct POST without using Rails' form helpers, so it trigger's Rails CSRF protection and won't work by default. You can disable CSRF protection for your app to get it to work (definitely not recommended), or just use the same provider you'd use in production with a different client ID / client secret.
 
 ## License
 
