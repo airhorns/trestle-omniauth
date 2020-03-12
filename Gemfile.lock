@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    trestle-omniauth (0.2.0)
+    trestle-omniauth (0.3.0)
       omniauth (~> 1.9.0)
       rails (>= 5.0.0)
       trestle (~> 0.9)
