@@ -11,7 +11,7 @@ module Trestle
         Trestle::Engine.paths["app/helpers"].concat(paths["app/helpers"].existent)
       end
 
-      initializer "trestle.omniauth.extend_controller" do
+      config.to_prepare do
         Trestle::ApplicationController.send(:include, Trestle::Omniauth::ControllerMethods)
       end
 
